@@ -4,10 +4,10 @@ const bodyParser = require("body-parser");
 const axios = require("axios").default;
 const app = express();
 const port = 5000;
-const base = "https://api-m.sandbox.paypal.com";
+const base = "https://api-m.paypal.com";
 
-const PAYPAL_CLIENT_ID = "AfoLh6XRzuyrLdoJxORIiDe4jIiHRuZDyNJK5WwcYPhyHnpkdZlZ9XcDiX7CK6PjYEGC5jZUDt9yub1L"
-const PAYPAL_CLIENT_SECRET = "EOdbdlHzcQfEHDj48sHJJtD4fKcraJwcyioqBFcCBi8KDe0x-FKX5kTgOXr6uKvpr2DnkjQ0-3_kACS_"
+const PAYPAL_CLIENT_ID = "AU9qMUHJnX0GbemLBe1DOJJCln7DF9e1Toinj1vK1TeSk2gn2xdOvhFALMrgoTvzkaaYeA8NAY8buwsD"
+const PAYPAL_CLIENT_SECRET = "EFTNR6UiSUwwWwy0ydCb_mu8pdg4BNHHcLRPbLTxbuwwm5gd8nc5BjRDtjtCqnh4y5_ioeV4B6IwfZyK"
 
 app.use(function (req, res, next) {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -59,7 +59,7 @@ const createOrder = async (cart) => {
       {
         amount: {
           currency_code: "USD",
-          value: cart[0]?.value,
+          value: 1,
         },
       },
     ],
